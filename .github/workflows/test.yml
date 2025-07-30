@@ -60,6 +60,11 @@ jobs:
       id: download
       run: tox -e test_data
 
+    - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+      name: Download halfpipe outputs for ds000030
+      id: download
+      run: tox -e test_data_halfpipe_ds30
+
   build:
     runs-on: ubuntu-latest
     steps:
