@@ -62,7 +62,7 @@ jobs:
 
     - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
       name: Download halfpipe outputs for ds000030
-      id: download
+      id: download_halfpipe_30
       run: tox -e test_data_halfpipe_ds30
 
   build:
