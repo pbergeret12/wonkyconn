@@ -94,9 +94,10 @@ def test_smoke(tmp_path: Path):
 
     seg_to_atlas_args: list[str] = []
     for n in [100, 200, 300, 400, 500, 600, 800]:
+        seg_name = f"Schaefer2018{n}Parcels7Networks"
         seg_to_atlas_args.append("--seg-to-atlas")
-        seg_to_atlas_args.append(f"Schaefer20187Networks{n}Parcels")
-        dseg_path = data_path / "atlases" / "sub-1" / "func" / f"sub-1_seg-Schaefer20187Networks{n}Parcels_dseg.nii.gz"
+        seg_to_atlas_args.append(seg_name)
+        dseg_path = data_path / "atlases" / "sub-1" / "func" / f"sub-1_seg-{seg_name}_dseg.nii.gz"
         seg_to_atlas_args.append(str(dseg_path))
 
     parser = global_parser()
